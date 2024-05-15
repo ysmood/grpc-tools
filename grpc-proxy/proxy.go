@@ -5,6 +5,7 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"net"
 	"os"
@@ -53,6 +54,8 @@ type server struct {
 
 func New(configurators ...Configurator) (*server, error) {
 	logger := logrus.New()
+	logger.SetOutput(io.Discard)
+
 	s := &server{
 		logger:           logger,
 		dialer:           proxydialer.NewProxyDialer(httpproxy.FromEnvironment().ProxyFunc()),
