@@ -104,12 +104,9 @@ func New(configurators ...Configurator) (*server, error) {
 	return s, nil
 }
 
-func (s *server) Start() error {
-	var err error
-	s.listener, err = net.Listen("tcp", fmt.Sprintf("%s:%d", s.networkInterface, s.port))
-	if err != nil {
-		return fmt.Errorf("failed to listen on interface (%s:%d): %v", s.networkInterface, s.port, err)
-	}
+func (s *server) Start(listener net.Listener) error {
+	s.listener = listener
+
 	s.logger.Infof("Listening on %s", s.listener.Addr())
 	if s.x509Cert != nil {
 		s.logger.Infof("Intercepting TLS connections to domains: %s", s.x509Cert.DNSNames)
@@ -131,6 +128,7 @@ func (s *server) Start() error {
 	// Use file path for Master Secrets file is specified. Send to /dev/null if not.
 	keyLogWriter := ioutil.Discard
 	if s.tlsSecretsFile != "" {
+		var err error
 		keyLogWriter, err = os.OpenFile(s.tlsSecretsFile, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0600)
 		if err != nil {
 			return fmt.Errorf("failed opening secrets file on path: %s", s.tlsSecretsFile)
