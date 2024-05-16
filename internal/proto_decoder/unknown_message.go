@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/bradleyjkemp/grpc-tools/internal"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/desc/builder"
 	"github.com/jhump/protoreflect/dynamic"
 	"github.com/pkg/errors"
+	"github.com/ysmood/grpc-tools/internal"
 )
 
 // When we don't have an actual proto message descriptor, this takes a best effort

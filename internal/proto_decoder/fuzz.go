@@ -1,8 +1,8 @@
 package proto_decoder
 
 import (
-	"github.com/bradleyjkemp/grpc-tools/internal"
 	"github.com/sirupsen/logrus"
+	"github.com/ysmood/grpc-tools/internal"
 )
 
 func Fuzz(data []byte) int {

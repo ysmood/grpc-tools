@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/bradleyjkemp/grpc-tools/internal/peekconn"
 	"github.com/sirupsen/logrus"
+	"github.com/ysmood/grpc-tools/internal/peekconn"
 )
 
 // This file implements a listener that splits received connections

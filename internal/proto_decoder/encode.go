@@ -3,11 +3,12 @@ package proto_decoder
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/bradleyjkemp/grpc-tools/internal"
+
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/dynamic"
+	"github.com/ysmood/grpc-tools/internal"
 )
 
 type messageEncoder struct {

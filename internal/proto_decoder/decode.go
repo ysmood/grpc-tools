@@ -1,11 +1,11 @@
 package proto_decoder
 
 import (
-	"github.com/bradleyjkemp/grpc-tools/internal"
 	"github.com/golang/protobuf/proto"
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/dynamic"
 	"github.com/sirupsen/logrus"
+	"github.com/ysmood/grpc-tools/internal"
 )
 
 type MessageResolver interface {

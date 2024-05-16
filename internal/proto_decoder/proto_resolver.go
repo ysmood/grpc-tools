@@ -2,12 +2,13 @@ package proto_decoder
 
 import (
 	"fmt"
-	"github.com/bradleyjkemp/grpc-tools/internal"
-	"github.com/bradleyjkemp/grpc-tools/internal/proto_descriptor"
+	"strings"
+
 	"github.com/golang/protobuf/ptypes/empty"
 	"github.com/jhump/protoreflect/desc"
 	"github.com/jhump/protoreflect/desc/builder"
-	"strings"
+	"github.com/ysmood/grpc-tools/internal"
+	"github.com/ysmood/grpc-tools/internal/proto_descriptor"
 )
 
 type descriptorResolver struct {

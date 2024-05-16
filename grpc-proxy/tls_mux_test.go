@@ -11,13 +11,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/bradleyjkemp/grpc-tools/testutils"
+	"github.com/ysmood/grpc-tools/testutils"
 
 	"golang.org/x/net/http2"
 
-	"github.com/bradleyjkemp/grpc-tools/internal/tlsmux"
 	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/require"
+	"github.com/ysmood/grpc-tools/internal/tlsmux"
 )
 
 // TestTLSMux_HTTP2Support verifies that HTTP/2 is supported.

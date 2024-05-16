@@ -7,7 +7,7 @@ import (
 	"net/http/httputil"
 	"strings"
 
-	"github.com/bradleyjkemp/grpc-tools/internal/marker"
+	"github.com/ysmood/grpc-tools/internal/marker"
 
 	"github.com/sirupsen/logrus"
 	"golang.org/x/net/http2"

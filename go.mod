@@ -1,4 +1,4 @@
-module github.com/bradleyjkemp/grpc-tools
+module github.com/ysmood/grpc-tools
 
 go 1.13
 
